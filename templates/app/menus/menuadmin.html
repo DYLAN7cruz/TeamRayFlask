@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../static/css/admin.css">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>MENUADMIN</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+        <a href="#" class="brand"><img class="imagen_portada" src="/static/img/portada.jpeg" alt="" width="50px"
+                height="50px">Team Ray</a>
+        <ul class="side-menu">
+            <li><a href="/templates/app/admin.html" class="active"><i class="fa-sharp fa-solid fa-user-tie icon"></i>
+                    {{session.nombre_rol}}</a></li>
+            <li class="divider" data-text="interfaces"></li>
+            <li>
+                <a href="#"><i class="fa-solid fa-user icon"></i> Personal <i
+                        class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="/templates/app/personal/nueva_persona.html">Nueva persona</a></li>
+                    <li><a href="/templates/app/personal/persona.html">Ver personas</a></li>
+
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="#"><i class="fa-solid fa-comments icon"></i></i> Comentarios <i
+                        class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="/templates/app/comentarios/comentario.html">Ver comentarios</a></li>
+
+
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-file-pen icon"></i> Matricula <i
+                        class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="/templates/app/matriculas/nueva_matricula.html">Nueva matricula</a></li>
+                    <li><a href="../templates/matricula.html">ver matriculas</a></li>
+
+                </ul>
+            </li>
+            
+        </li>
+        <li>
+            <a href="#"><i class="fa-solid fa-bell icon"></i></i> Notificaciones <i
+                    class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="/templates/app/notificaciones/nueva_notificacion.html">Nueva notificacion</a></li>
+                <li><a href="/templates/app/notificaciones/notificaciones.html">ver notificaciones</a></li>
+
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class="fa-solid fa-calendar-days icon"></i></i></i> Horario de eventos <i
+                    class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="../templates/nuevo_horario_eventos.html">Nueva horario</a></li>
+                <li><a href="../templates/horarios_eventos.html">ver horarios</a></li>
+
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class="fa-solid fa-bell icon"></i></i> Tipo de evento <i
+                    class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="../templates/nuevo_tipo_evento.html">Nueva tipo evento</a></li>
+                <li><a href="../templates/tipo_evento.html">ver tipo evento</a></li>
+
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class="fa-solid fa-calendar-check icon"></i></i></i> Eventos <i
+                    class='bx bx-chevron-right icon-right'></i></a>
+            <ul class="side-dropdown">
+                <li><a href="../templates/nuevo_evento.html">Nueva evento</a></li>
+                <li><a href="../templates/ver_eventos.html">ver evento</a></li>
+
+            </ul>
+        </li>
+        
+        
+
+
+
+
+
+
+        </ul>
+
+    </section>
+    <!-- SIDEBAR -->
+
+
+</body>
+
+</html>

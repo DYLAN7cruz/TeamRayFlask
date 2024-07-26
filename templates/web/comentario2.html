@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheRayTeam</title>
+    <!--FOTO DE LA PESTAÑA-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/img/portada.jpeg">
+    <!--ESTILOS DE EL INTERFAZ MODALIDADES-->
+    <link rel="stylesheet" href="../../static/css/modalidades.css">
+    <!--ESTILOS DE EL MENU Y FOOTER-->
+    <link rel="stylesheet" href="../../static/css/menu-footer.css">
+    <!--ESTILOS DE EL SCROLL Y LOADER-->
+    <link rel="stylesheet" href="../../static/css/scroll-loader.css">
+    <!--CDN DE LOS ICONOS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <script src="../../static/js/loader.js"></script>
+    <!--------------------------------------SCRIPT LOADER----------------------------->
+
+    <!--------------------------------------LOADER----------------------------->
+
+
+
+    <div class="center loader" id="loader">
+        <div class="spiner">
+            <div class="spiner">
+                <div class="spiner">
+                    <div class="spiner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------FIN LOADER----------------------------->
+
+
+
+
+    <header><!--------------------------------------MENU----------------------------->
+
+        <a href="#" class="logo">
+            <img src="../../static/img/portada.jpeg">
+        </a>
+        <nav class="menu">
+            <div class="icono-menu">
+                <i class="fas fa-times close-btn"></i>
+            </div>
+            <ul>
+                <li><a href="/">inicio</a></li>
+
+                <li><a href="/templates/web/servicios.html">servicios</a></li>
+                <li><a href="/templates/web/eventos.html">eventos</a></li>
+                <li><a href="/templates/web/contactanos.html">Contactanos</a></li>
+                <li><a href="/templates/web/comentario2.html">Comentarios</a></li>
+                <li><a href="/templates/web/loginn.html">Login</a></li>
+
+            </ul>
+        </nav>
+        <div class="icono-menu">
+            <i class="fas fa-bars menu-btn"></i>
+        </div>
+
+    </header><!--------------------------------------FIN MENU----------------------------->
+
+
+
+    </div>
+    <div class="caja">
+        {% for row in list_comentarios %}
+        <div class="comentarios">
+            <div class="nombres">{{row[3]}} {{row[4]}}</div>
+            {{row[1]}}
+        </div>
+        <br>
+        {% endfor %}
+    </div>
+    </div>
+
+
+
+    <footer><!--------------------------------------PIE PAGINA----------------------------->
+        <div class="contenedor">
+            <div class="sobre">
+                <h2 class="titulos">Nosotros</h2>
+                <p class="parrafo">Somos una academia de artes marciales fundada el 6 de septiembre del 2017 con
+                    especialidad
+                    en deportes de contacto, dedicados a la formacion fisica y mental de nuestros alumnos a travez de la
+                    verdadera
+                    filosofia marcila.
+                </p>
+                <ul class="sci">
+                    <li><a href="https://www.facebook.com/profile.php?id=100063795690697" target="_blank"><i
+                                class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.instagram.com/teamraytrt/" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+
+                </ul>
+            </div>
+            <div class="links">
+                <h2 class="titulos">links</h2>
+                <ul>
+                    <li><a href="/">inicio</a></li>
+
+                    <li><a href="/templates/web/servicios.html">servicios</a></li>
+                    <li><a href="/templates/web/eventos.html">eventos</a></li>
+                    <li><a href="/templates/web/contactanos.html">Contactanos</a></li>
+                    <li><a href="/templates/web/comentario2.html">Comentarios</a></li>
+                    <li><a href="/templates/web/loginn.html">Login</a></li>
+
+                    <div>
+                        <span class="candado"><i class="fa-solid fa-lock"></i></span>
+                        <h2><a class="acceso_privado" href="login.html">Acceso Privado</a></h2>
+                    </div>
+                </ul>
+            </div>
+            <div class="contactos">
+                <h2 class="titulos">contactos</h2>
+                <ul class="info">
+                    <li>
+                        <span><i class="fa-solid fa-location-dot"></i></span>
+                        <span>Av. Cóndor Ñan <br> Quito 170146 <br> ECUADOR </span>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-phone"></i></span>
+                        <p><a href="tel: 0995953694">+596 098 492 1073</a><br>
+                            <a href="tel: 0995953694">+596 099 523 3041</a>
+                        </p>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-envelope"></i></span>
+                        <p><a href="mail: dag.cruz@yavirac.edu.ec">teamraytrt@gmail.com</a></p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </footer><!--------------------------------------FIN PIE PAGINA----------------------------->
+    <div class="copyright">
+        <p>Copyright © 2023 The Team Ray Academia</p>
+    </div>
+    <script src="../../static/js/menu.js"></script>
+    <!--------------------------------------PARA HACER EL EFECTO SCROOL AL MENU----------------------------->
+
+</body>
+
+</html>

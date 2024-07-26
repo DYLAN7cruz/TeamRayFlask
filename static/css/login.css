@@ -1,0 +1,322 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../IMG/fondonegro.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  max-width: 530px;
+  width: 100%;
+
+  background: rgba(0, 0, 0, 0.579);
+  height: 380px;
+
+  overflow: hidden;
+  overflow-y: auto;
+  border-left: rgb(255, 255, 255) solid 3px;
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+
+}
+
+.container::-webkit-scrollbar {
+
+  width: 3px;
+  background: rgb(255, 255, 255);
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255);
+  height: 5px;
+}
+
+.container .forms {
+  display: flex;
+  align-items: center;
+  height: 380px;
+  width: 200%;
+  transition: height 0.2s ease;
+}
+
+
+.container .form {
+  width: 50%;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.748);
+  transition: margin-left 500ms ease;
+
+}
+
+.container.active .login {
+  margin-left: -50%;
+  opacity: 0;
+  transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+.container .registro {
+  opacity: 0;
+  transition: opacity 0.09s ease;
+  height: 600px;
+
+}
+
+.container.active .registro {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.container.active .forms {
+  height: 600px;
+}
+
+.container .form .titulo {
+  position: relative;
+  font-size: 27px;
+  font-weight: 600;
+  color: white;
+}
+
+.form .titulo::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background-color: #f80303;
+  border-radius: 25px;
+}
+
+.form .inputs {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+
+
+}
+
+.inputs input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 35px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  border-top: 2px solid transparent;
+  transition: all 0.2s ease;
+  background-color: white;
+  color: rgb(0, 0, 0);
+}
+
+::placeholder {
+  color: black;
+}
+
+.inputs input:is(:focus, :valid) {
+  border-bottom-color: #ff0000;
+}
+
+.inputs i {
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
+  transform: translateY(-50%);
+  color: rgb(0, 0, 0);
+  font-size: 23px;
+  transition: all 0.2s ease;
+}
+
+.inputs input:is(:focus, :valid)~i {
+  color: #f44040;
+}
+
+.inputs i.icon {
+  left: 0;
+}
+
+.inputs i.showHidePw {
+  right: 0;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.form .checkbox-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+
+.form .text {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+}
+
+.form a.text {
+  color: #ff0000;
+  text-decoration: none;
+}
+
+.form a:hover {
+  text-decoration: underline;
+}
+
+.form .button {
+  margin-top: 35px;
+}
+
+.form .button input {
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  background-color: #ff0000;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.button input:hover {
+  background-color: #ff0303b4;
+  transform: scale(1.02);
+  color: black;
+}
+
+.form .login-signup {
+  margin-top: 30px;
+  text-align: center;
+}
+
+
+@media (max-width: 991px) {
+  .container {
+    background-color: #00000089;
+    width: 150%;
+    border: none;
+    margin-left: -130px;
+  }
+
+  .container::-webkit-scrollbar {
+
+    width: 10px;
+    background: rgb(0, 0, 0);
+    border: none;
+  }
+
+  .container::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255);
+    height: 10px;
+  }
+
+}
+
+
+
+.center-alert {
+  
+  transition: all ease 500ms;
+}
+
+
+
+
+
+
+.contenedor {
+
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 75%;
+  margin-left: 72px;
+  border-left: rgb(255, 255, 255) 3px solid;
+
+}
+
+
+
+.flecha {
+  margin-left: 30px;
+  margin-bottom: 85vh;
+
+
+}
+
+.fa-solid {
+  color: rgb(255, 255, 255);
+  transition: all ease-in 300ms;
+}
+
+.fa-solid:hover{
+  transform: scale(1.1);
+  color: rgb(255, 0, 0);
+}
+
+.flecha button {
+  padding: 10px 10px;
+
+  background: transparent;
+  font-size: 40px;
+  border: none;
+}
+
+.imagen {
+  background-image: url(../IMG/portada.png.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom -140px right 0px;
+  flex: 0 0 calc(60%);
+  position: relative;
+}
+
+.imagen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.496), rgba(0, 0, 0, 0.627));
+}
+
+@media (max-width: 991px) {
+  .contenedor {
+
+    display: inline-block;
+    border: none;
+  }
+
+  .flecha {
+    margin-left: 30px;
+    margin-bottom: 590px;
+  }
+
+  .flecha button {
+    font-size: 30px;
+  }
+
+  .imagen {
+    visibility: hidden;
+  }
+
+}

@@ -1,0 +1,137 @@
+
+:root {
+	--grey: #F1F0F6;
+	--dark-grey: #8D8D8D;
+	--light: #fff;
+	--dark: #000;
+	--green: #81D43A;
+	--light-green: #E3FFCB;
+	--blue: #1775F1;
+	--light-blue: #D0E4FF;
+	--dark-blue: #0C5FCD;
+	--red: #ff0022;
+    --verde: #249615;
+}
+
+
+body{
+    height: 90vh;
+    display: flex;
+}
+
+
+.todo{
+    
+    height: 90vh;
+    margin-left: 40px;
+    margin-right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.todo2{
+    display: block;
+}
+
+
+.tabla_full{
+    background-color:var(--light);
+    width: auto !important;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
+    transition: all 300ms ease-in;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.tabla_full:hover{
+    
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+.fila{
+    background-color: var(--dark);
+   color: var(--light);
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    
+}
+.columna{
+    background-color: var(--grey);
+    text-align: center;
+   padding: 5px;  
+}
+.actualizar{
+    background-color: var(--verde);
+    padding: 3px 6px;
+    border-radius: 2px;
+    color: var(--light);
+    transition: all 400ms ease;
+}
+.actualizar:hover{
+    transform: scale(1.01);
+    background-color: var(--light);
+    color: var(--verde);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
+}
+.eliminar{
+    background-color: var(--red);
+    padding: 3px 6px;
+    border-radius: 2px;
+    color: var(--light);
+    transition: all 400ms ease;
+}
+.eliminar:hover{
+    transform: scale(1.01);
+    background-color: var(--light);
+    color: var(--red);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+.paginador{
+    
+    
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: right;
+}
+
+.paginadores{
+    background-color: var(--dark);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 7px;
+    color: var(--light);
+    transition: all 400ms ease;
+    
+}
+.paginadores:hover{
+    transform: scale(1.01);
+    
+    color: var(--red);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
+}
+.num_paginador{
+    background-color: var(--dark);
+    padding: 1px 10px;
+    color: var(--light);
+    border-radius: 7px;
+}
+.nuevo{
+    background-color: var(--dark);
+    
+    padding: 8px;
+    border-radius: 7px;
+    color: var(--light);
+    transition: all 400ms ease;
+   
+    border: none;
+}
+.nuevo:hover{
+    transform: scale(1.01);
+    
+    color: var(--red);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
+}

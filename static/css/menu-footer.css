@@ -1,0 +1,331 @@
+/*------------------------------------------------------------/*MENU*//*---------------------------------------------------------*/
+
+header .logo img {
+    height: 40px;
+
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+header {
+    z-index: 999;
+    position: fixed;
+    height: 50px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 70px;
+    transition: 0.6s;
+}
+
+
+/*CAMBIO DE MENU TRANSPARENTE A MENU DE COLOR*/
+header.down {
+    background: #000000;
+    padding: 15px 80px;
+    border-bottom: 3px solid rgb(255, 0, 0);
+}
+
+header .logo {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+header .menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(51, 0, 255);
+
+}
+
+header .menu ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header .menu ul li {
+    list-style: none;
+}
+
+header .menu a {
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0 2px;
+    padding: 12px 22px;
+    border-radius: 0px;
+    /*background: rgb(45, 41, 41);*/
+    transition: ease all 500ms;
+    transition-property: color, background;
+}
+
+header .menu a:hover {
+    transform: scale(1.5);
+    background-color: #c70000;
+    /*box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);
+    border: none;
+    border-bottom: 2px solid rgb(255, 255, 255);*/
+}
+
+header .icono-menu {
+    color: rgb(209, 0, 0);
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 991px) {
+
+    header,
+    header.down {
+        padding: 0px 40px;
+    }
+
+    header .icono-menu {
+        display: block;
+    }
+
+
+    header .menu {
+        position: fixed;
+        background: #000000;
+        min-width: 330px;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        padding: 80px 50px;
+        transition: 0.5s;
+        transition-property: right;
+    }
+
+    header .menu ul {
+        flex-direction: column;
+    }
+
+    header .menu.active {
+        right: 0;
+    }
+
+    header .menu .close-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 25px;
+    }
+
+    header .menu a {
+        display: block;
+        font-size: 20px;
+        margin: 20px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    
+}
+
+.imagen {
+    display: flex;
+    width: 100%;
+}
+
+
+/*------------------------------------------------------------/*FOOTER*//*-------------------------------------------------------*/
+
+footer{
+    background-color: #000000;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 4px solid rgb(255, 0, 0);
+  
+  }
+  .fa-brands{
+    color: rgb(255, 255, 255);
+  }
+  .fa-solid{
+    color: white;
+    transition: all ease 400ms;
+  }
+  .fa-solid:hover{
+    transform: scale(1.1);
+    color: #ff0000;
+  }
+  footer .contenedor{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .sobre{
+    margin-right: 30px;
+    width: 40%;
+  }
+  .titulos{
+    position: relative;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  .titulos::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #ff0000;
+  }
+  
+  .parrafo{
+    color: white;
+  }
+  .sci{
+    margin-top: 20px;
+    display: flex;
+  }
+  .sci li{
+    list-style: none;
+    transition: all ease 400ms;
+  }
+  .sci li:hover{
+    transform: scale(1.1);
+  }
+  .sci li a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: rgb(45, 41, 41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: all ease 400ms;
+  }
+  .sci li a:hover{
+    background-color: #ff0000;
+  }
+  .links{
+    position: relative;
+    width: 25%;
+  }
+  .links ul li{
+    list-style: none;
+  }
+  .links ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+    transition: all ease 400ms;
+  }
+  .links ul li a:hover{
+    color: #ff0000;
+  }
+  .candado{
+    color: aqua;
+    position: absolute;
+    
+  }
+  .fa-lock{
+    color: rgb(255, 0, 0);
+  }
+  .acceso_privado{
+    font-size: 16px;
+    text-decoration: none;
+    
+    left: 22px;
+    bottom: 7px;
+    position: relative;
+    color: rgb(255, 0, 0);
+    transition: all ease 300ms;
+  }
+  .acceso_privado:hover{
+    border-bottom: 2px solid rgb(255, 0, 0);;
+  }
+  .contactos{
+    width: calc(35% - 60px);
+    margin-right: 0 !important;
+  }
+  .info{
+    position: relative;
+  
+  }
+  .info li{
+    display: flex;
+    margin-bottom:  16px;
+  }
+  .info li span:nth-child(1){
+    color: chartreuse;
+    font-size: 20px;
+    margin-right: 10px
+  }
+  .info li span{
+    color: white;
+  }
+  .info li a{
+    color: white;
+    text-decoration: none;
+    transition: all ease 500ms;
+  }
+  .info li a:hover{
+    color: #ff0000;
+  }
+  .copyright{
+    width: 100%;
+    background: rgb(45, 41, 41);
+    padding: 8px 100px;
+    text-align: center;
+    color: rgb(255, 2, 2);
+  }
+  
+  /*RESPONSIVE FOOTER*/
+  @media (max-width: 991px) {
+    footer{
+      padding: 40px;
+    }
+    footer .contenedor{
+      flex-direction: column;
+    }
+    .sobre{
+      margin-right: 0;
+      margin-bottom: 40px;
+      width: 100%;
+    }
+    .sobre .links .contactos{
+      width: 100%;
+    }
+    .copyright{
+      width: 100%;
+      padding: 8px 40px;
+      
+  
+    }
+    .contactos{
+      margin-top: 25px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+  }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../static/css/admin.css">
+    
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>MENUENTRENADOR</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+        <a href="#" class="brand"><img class="imagen_portada" src="../static/img/portada.jpeg" alt="" width="50px" height="50px" >Team Ray</a>
+        <ul class="side-menu">
+            <li><a href="../templates/admin.html" class="active"><i class="fa-sharp fa-solid fa-user-tie icon"></i>
+                {{session.nombre_rol}}</a></li>
+            <li class="divider" data-text="interfaces"></li>
+            
+            
+
+            <li>
+                <a href="#"><i class="fa-solid fa-paste icon"></i> Estudiantes <i
+                        class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="../templates/estudiantes.html">Ver estudiantes</a></li>
+                    
+
+                </ul>
+            </li>
+
+          
+
+            
+
+
+        </ul>
+
+    </section>
+    <!-- SIDEBAR -->
+
+    
+</body>
+
+</html>

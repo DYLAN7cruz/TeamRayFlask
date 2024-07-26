@@ -1,0 +1,159 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+
+body {
+
+  background-image: url(../IMG/fondonegro.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.servicios {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #000000;
+  border-right: rgb(255, 0, 0) 3px solid;
+  margin: 0px 80px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.box-area {
+  width: 300px;
+  margin: 25px;
+  padding: 20px 20px;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.91), rgba(0, 0, 0, 0.682)),
+    url(../IMG/servicios.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease-in;
+  border: 2px solid rgb(255, 255, 255);
+  text-align: center;
+  height: 250px;
+  overflow: auto;
+}
+.box-area::-webkit-scrollbar{
+  background-color: rgb(0, 0, 0);
+  width: 5px;
+}
+.box-area::-webkit-scrollbar-thumb{
+  background-color: rgb(0, 0, 0);
+}
+
+.box-area h6 {
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 40px;
+  text-transform: uppercase;
+
+}
+
+.box-area p {
+  color: white;
+}
+
+.box-area p:nth-child(1) {
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.box-area p:nth-child(2) {
+  color: rgb(222, 0, 0);
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.box-area p:nth-child(3) {
+  color: rgb(255, 255, 0);
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.box-area p:nth-child(5) {
+  color: rgb(255, 255, 0);
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.box-area p:nth-child(7) {
+  color: rgb(255, 255, 0);
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.box-area:hover {
+  background: #ff0000;
+  border: 2px solid black;
+  color: black;
+}
+
+.box-area:hover p {
+  color: rgb(0, 0, 0);
+}
+
+.box-area:hover p {
+  color: rgb(0, 0, 0);
+}
+
+#titulo_niños {
+  color: rgb(255, 255, 0);
+
+}
+
+
+#horario_niños {
+  color: white;
+  font-size: 16px;
+}
+
+
+
+#titulo_promociones {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 30px;
+}
+
+#subtitulo {
+  color: rgb(255, 255, 0);
+}
+
+#mensual {
+  color: white;
+}
+
+#titulo_instalaciones {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+#instalaciones {
+  color: white;
+  font-size: 17px;
+  left: 0;
+}
+@media (max-width: 991px) {
+
+  .servicios{
+    width: 95%;
+    margin-left: 10px;
+  }
+}

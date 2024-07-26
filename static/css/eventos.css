@@ -1,0 +1,248 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-image: url(../IMG/fondonegro.png);
+  background-size: cover;
+  margin-top: 80px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*----------------------------------------------------------------------------------------------------------------/*TITULO RAMPAGE*/
+/*---------------------------------------------------------------------------*/
+
+.rampage {
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.rampage h2 {
+  color: red;
+  letter-spacing: 40px;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+/*----------------------------------------------------------------------------------------------------------------/*CARRUSEL*/
+/*---------------------------------------------------------------------------*/
+
+
+
+.parent {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 80%;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  background-color: rgba(0, 0, 0, 0.371);
+  padding: 40px;
+  padding-right: 80px;
+  margin-left: 110px;
+  border: rgb(255, 0, 0) 3px solid;
+}
+
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------/*IMAGEN DERECHA-->*/
+/*---------------------------------------------------------------------------*/
+
+
+.div2 img {
+  width: 100%;
+  height: 360px;
+  border: 3px solid rgb(255, 255, 255);
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+.container {
+  position: relative;
+}
+
+.carrusel {
+  display: none;
+}
+
+
+
+
+.carrusel::before {  /*---------FONDO NEGRO DE LA IMAGEN---------*/
+  
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.353), rgba(0, 0, 0, 0.375));
+}
+
+.carrusel img {  /*---------IMAGENENES DEL CARRUSEL---------*/
+  width: 100%;
+  height: 400px;
+}
+
+.carrusel1::before {  /*---------FONDO NEGRO DE LA IMAGEN---------*/
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.353), rgba(0, 0, 0, 0.375));
+}
+.carrusel1 {
+  display: none;
+}
+
+.carrusel1 img {   /*---------IMAGENENES DEL CARRUSEL---------*/
+  width: 100%;
+  height: 400px;
+}
+
+.carrusel2 {
+  display: none;
+}
+
+.carrusel2::before {   /*---------FONDO NEGRO DE LA IMAGEN---------*/
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.353), rgba(0, 0, 0, 0.375));
+}
+
+.carrusel2 img {    /*---------IMAGENENES DEL CARRUSEL---------*/
+  width: 100%;
+  height: 400px;
+}
+
+/*------------------------------------------------------------------------------------------------/*FLECHAS DE CAMBIO DE IMAGEN*/
+/*---------------------------------------------------------------------------*/
+
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6 ease;
+  background-color: #ff0000;
+  border-radius: 0 30px 30px 0;
+  user-select: none;
+  
+}
+
+.next {
+  right: 0;
+  border-radius: 32px 0 0 32px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 0, 0);
+}
+
+.elements {
+  text-align: center;
+}
+
+.quadrate {
+  cursor: pointer;
+  height: 4px;
+  width: 50px;
+  margin: 0 2px;
+  background-color: #05ed34;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  border-radius: 2px;
+}
+
+.active,
+.quadrate:hover {
+  background-color: rgb(6, 6, 255)
+}
+
+/*----------------------------------------------------------------------------------------------------------------/*RESPONSIVE EVENTOS*/
+/*---------------------------------------------------------------------------*/
+
+
+@media (max-width: 991px) {
+  .rampage h2 {
+    color: red;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-size: 35px;
+  }
+  .parent {
+    display: grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 90%;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    background-color: rgba(0, 0, 0, 0.371);
+    padding: 30px;
+    padding-right: 30px;
+    margin-left: 20px;
+    border: rgb(255, 0, 0) 3px solid;
+  }
+  .div2 img {
+    width: 100%;
+    height: 260px;
+    border: 3px solid rgb(255, 255, 255);
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+
+
+  .carrusel {
+    display: none;
+  
+  }
+  .carrusel img {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .carrusel1 img {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .carrusel2 img {
+    width: 100%;
+    height: 250px;
+  }
+  
+
+}

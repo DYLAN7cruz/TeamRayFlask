@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- ESTILOS DEL ADMIN -->
+	<link rel="stylesheet" href="../../static/css/admin.css">
+	<!--ESTILOS DE EL SCROLL Y LOADER-->
+	<link rel="stylesheet" href="/static/css/scroll-loader.css">
+	<title>AdminSite</title>
+	<!-- LIBRERIA DE ICONOS FONT AWESOME -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+		integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+	<script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+	<!--------------------------------------SCRIPT LOADER----------------------------->
+
+
+	<!--------------------------------------LOADER----------------------------->
+
+
+
+	<div class="center loader" id="loader">
+		<div class="spiner">
+			<div class="spiner">
+				<div class="spiner">
+					<div class="spiner">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------FIN LOADER----------------------------->
+
+
+	{% if session['nombre_rol'] == "Administrador" %}
+	{% include 'app/menus/menuadmin.html' %}
+	{% elif session['nombre_rol'] == "Entrenador" %}
+	{% include 'app/menus/menuentrenador.html' %}
+	{% else %}
+	{% include 'app/menus/menuestudiante.html' %}
+	{% endif %}
+	<!-- NAVBAR -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class="fa-solid fa-bars menu"></i>
+			<form action="#">
+				<div class="form-group">
+					<!--<input type="text" placeholder="Buscar...">
+					<i class='bx bx-search icon'></i>-->
+				</div>
+			</form>
+
+
+			<span class="divider"></span>
+			<div class="profile">
+				<p class="perfil">{{session.nombres}} {{session.apellidos}}</p>
+				<ul class="profile-link">
+
+					<li><a href="{{ url_for('logout') }}"><i class='bx bxs-log-out-circle'></i> Salir</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">Panel de {{session.nombre_rol}}</h1>
+
+			<div class="info-data">
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>Personal</h2>
+
+						</div>
+
+					</div>
+					<span class="progress" data-value="100%"></span>
+					<span class="label">100%</span>
+				</div>
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>Comentarios</h2>
+
+						</div>
+
+					</div>
+					<span class="progress" data-value="60%"></span>
+					<span class="label">60%</span>
+				</div>
+
+
+			</div>
+			<div class="informacion">
+				<div class="informacion_personal">
+					<h3 class="titulo_informacion">Informacion Personal</h3>
+					<p><strong>Cedula:</strong> {{session.id}} </p>
+					<p><strong>Nombres:</strong> {{session.nombres}} </p>
+					<p><strong>Apellidos:</strong> {{session.apellidos}} </p>
+					<p><strong>Fecha nacimiento:</strong> {{session.fecha_nacimiento}} </p>
+					<p><strong>Fecha inscripcion:</strong> {{session.fecha_inscripcion}} </p>
+					<p><strong>Cinturon:</strong> {{session.nombre_cinturon}} </p>
+					<p><strong>Genero:</strong> {{session.genero}} </p>
+					<p><strong>Rol:</strong> {{session.nombre_rol}} </p>
+					<p><strong>Correo:</strong> {{session.correo}} </p>
+					<p><strong>Telefono:</strong> {{session.telefono}} </p>
+					<p><strong>Direccion:</strong> {{session.direccion}} </p>
+
+				</div>
+				<div class="informacion_empresa">
+					<h3 class="titulo_informacion">Informacion Empresa</h3>
+
+
+				</div>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+
+
+
+	<script src="/static/js/hola.js"></script>
+	
+
+
+</body>
+
+</html>
