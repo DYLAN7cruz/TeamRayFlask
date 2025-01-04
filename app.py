@@ -64,9 +64,5 @@ def logout():
     return render_template('web/loginn.html')
 
 
-
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)

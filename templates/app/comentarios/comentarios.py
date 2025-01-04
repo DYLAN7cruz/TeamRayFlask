@@ -131,7 +131,7 @@ def delete_comentario(id):
                 DELETE FROM personas.comentarios WHERE id = %s
                 """, (id,))
         conn.commit()
-        flash('Comentario Eliminado Correctamente')
+        flash('Comentario Eliminado Correctamente') 
         return redirect(url_for('comentarios.comentario'))
     flash('Debes iniciar sesión para acceder a esta página.')
     return render_template('web/loginn.html')

@@ -11,6 +11,8 @@
 	--dark-blue: #0C5FCD;
 	--red: #ff0022;
     --verde: #249615;
+    --excel: #217346;
+    --pdf: #bf1313e7;
 }
 
 
@@ -85,6 +87,35 @@ body{
     transform: scale(1.01);
     background-color: var(--light);
     color: var(--red);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
+}
+
+.excel{
+    background-color: var(--excel);
+    padding: 5px 8px;
+    border-radius: 4px;
+    color: var(--light);
+    transition: all 400ms ease;
+    font-size: 20px;
+}
+.excel:hover{
+    transform: scale(1.01);
+    background-color: var(--light);
+    color: var(--excel);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
+}
+.pdf{
+    background-color: var(--pdf);
+    padding: 3px 6px;
+    border-radius: 2px;
+    color: var(--light);
+    transition: all 400ms ease;
+    font-size: 20px 10px;
+}
+.pdf:hover{
+    transform: scale(1.01);
+    background-color: var(--light);
+    color: var(--pdf);
     box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
 }
 
