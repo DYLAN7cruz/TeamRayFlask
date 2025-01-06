@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../static/css/admin.css">
+    <link rel="stylesheet" href="../static/css/nuevo_usuario.css">
+    <!--ESTILOS DE EL SCROLL Y LOADER-->
+    <link rel="stylesheet" href="../static/css/scroll-loader.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>NuevoUsuario</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+    
+    <!--  -->
+    {% if session['nombre_rol'] == "Administrador" %}
+    {% include 'app/menus/menuadmin.html' %}
+    {% elif session['nombre_rol'] == "Entrenador" %}
+    {% include 'app/menus/menuentrenador.html' %}
+    {% else %}
+    {% include 'app/menus/menuestudiante.html' %}
+    {% endif %}
+
+    
+
+    <!-- NAVBAR -->
+    <section id="content">
+        <!-- NAVBAR -->
+        <nav>
+			<i class="fa-solid fa-bars menu"></i>
+			<form action="#">
+				<div class="form-group">
+					<!--<input type="text" placeholder="Buscar...">
+					<i class='bx bx-search icon'></i>-->
+				</div>
+			</form>
+
+			<span class="divider"></span>
+			<div class="profile">
+				<p class="perfil">{{session.nombres}} {{session.apellidos}}</p>
+				<ul class="profile-link">
+
+					<li><a href="{{ url_for('logout') }}"><i class='bx bxs-log-out-circle'></i> Salir</a></li>
+				</ul>
+			</div>
+		</nav>
+
+        <!-- NAVBAR -->
+
+
+
+        <div class="todo">
+            <div class="todo2">
+                <div class="ver">
+                    <a href="/templates/app/horario_eventos/horario_eventos.html" class="nuevo"><i class="fa-solid fa-arrow-left"></i> Regresar</a>
+                </div>
+                <div class="form login">
+
+                    <span class="title">Registro de usuario</span>
+
+                    <form action="/update_tipo_evento/{{tipo_evento.id}}" method="post" autocomplete="off" >
+                        <div class="input-field">
+                            <input type="text" placeholder="Ingrese su fecha nacimiento"  value="{{tipo_evento.nombre}}" required name="nombre"
+                                id="nombre" required>
+                                <i class="fa-regular fa-clock"></i>
+                        </div>
+                        
+                        
+                        
+
+
+                        <div class="input-field button">
+                            <input type="submit" value="Ingresar" id="place_order">
+                        </div>
+
+                    </form>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        
+        <script src="/static/js/hola.js"></script>
+        <script src="/static/js/index.js"></script>
+        <script src="/static/js/validacion.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
+        <!--HACE QUE EL BOTON DE LA EQUIS DEL ALERTA FUNCIONE-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <script>
+
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: '{{ message }}',
+                showConfirmButton: false,
+                timer: 1500
+            })
+
+
+
+
+        </script>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+
+
+    </section>
+</body>
+
+</html>

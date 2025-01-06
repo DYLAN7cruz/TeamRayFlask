@@ -20,11 +20,15 @@ def admin():
        cursor.execute("SELECT COUNT(*) FROM personas.notificaciones")
        count = cursor.fetchone()[0]
 
-        # Obtener el número de notificaciones
+         # Obtener el número de notificaciones
+       cursor.execute("SELECT COUNT(*) FROM personas.comentarios")
+       count_comentario = cursor.fetchone()[0]
+
+        # Obtener el número de estudiantes
        cursor.execute("SELECT COUNT(*) FROM personas.personas WHERE nombre_rol = 'Estudiante'")
        countt = cursor.fetchone()[0]
 
-       return render_template('app/admin.html', countt=countt, count=count)
+       return render_template('app/admin.html', countt=countt, count=count, count_comentario=count_comentario)
     
     # El usuario no ha iniciado sesión, redirigir a la página de inicio de sesión
 

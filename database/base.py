@@ -3,7 +3,7 @@ from  psycopg2 import DatabaseError
 
 def get_conection(): 
     DB_HOST = "localhost"
-    DB_NAME = "teamray_final"
+    DB_NAME = "final_teamray"
     DB_USER = "postgres"
     DB_PASS = "2004"
  

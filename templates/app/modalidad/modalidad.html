@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/static/css/admin.css">
+
+    <link rel="stylesheet" href="/static/css/persona.css">
+    <!--ESTILOS DE EL SCROLL Y LOADER-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/scroll-loader.css') }}">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Modalidad</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+    <script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+    <!--------------------------------------SCRIPT LOADER----------------------------->
+
+    <!--------------------------------------LOADER----------------------------->
+
+
+
+    <div class="center loader" id="loader">
+        <div class="spiner">
+            <div class="spiner">
+                <div class="spiner">
+                    <div class="spiner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------FIN LOADER----------------------------->
+
+
+    <!--  -->
+    {% if session['nombre_rol'] == "Administrador" %}
+    {% include 'app/menus/menuadmin.html' %}
+    {% elif session['nombre_rol'] == "Entrenador" %}
+    {% include 'app/menus/menuentrenador.html' %}
+    {% else %}
+    {% include 'app/menus/menuestudiante.html' %}
+    {% endif %}
+
+
+    <!-- NAVBAR -->
+    <section id="content">
+        <!-- NAVBAR -->
+        <nav>
+            <i class="fa-solid fa-bars menu"></i>
+            <form action="/templates/app/modalidad/modalidad.html" method="post">
+                <div class="form-group">
+                    <input type="text" name="buscar" id="buscar" placeholder="Buscar...">
+                    <i class='bx bx-search icon'></i>
+                </div>
+
+            </form>
+
+            <span class="divider"></span>
+            <div class="profile">
+                <p class="perfil">{{session.nombres}} {{session.apellidos}}</p>
+                <ul class="profile-link">
+
+                    <li><a href="{{ url_for('logout') }}"><i class='bx bxs-log-out-circle'></i> Salir</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- NAVBAR -->
+
+
+
+        <div class="todo">
+            <div class="todo2">
+                <a href="/templates/app/modalidad/nueva_modalidad.html" class="nuevo"><i class="fa-solid fa-plus"></i></i> Nueva Modalidad</a>
+                <table id="tblDatos" class="tabla_full">
+                    <thead>
+                        <tr class="filas">
+                            <td class="fila">id</td>
+                            <td class="fila">Modalidad</td>
+
+                            <td class="fila">Opciónes</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in list_modalidad %}
+                        <tr class="columnas">
+                            <td class="columna">{{row[0]}}</td>
+                            <td class="columna">{{row[1]}}</td>
+
+
+
+                            <td class="columna">
+                                <a href="/edit_modalidad/{{row[0]}}" class="actualizar"><i class="fa-solid fa-user-pen"></i></a>
+                                <a onclick="confirmar('{{row[0]}}')" class="eliminar"><i
+                                        class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div id="paginador" class="paginador"></div>
+            </div>
+
+        </div>
+
+
+        <script src="/static/js/hola.js"></script>
+
+        <script src="/static/js/paginador.js"></script>
+
+
+        <!--HACE QUE EL BOTON DE LA EQUIS DEL ALERTA FUNCIONE-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            function confirmar(id) {
+                Swal.fire({
+
+                    title: 'Estas seguro de eliminar ?',
+
+                    text: "No podras revertir esto !",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Si, eliminar!'
+
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location = '/deletemodalidad/' + id;
+                    }
+                })
+            }
+        </script>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <script>
+
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: '{{ message }}',
+                showConfirmButton: false,
+                timer: 2000
+            })
+
+
+
+
+        </script>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+    </section>
+</body>
+
+</html>

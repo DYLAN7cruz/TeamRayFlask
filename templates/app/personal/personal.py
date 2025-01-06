@@ -74,8 +74,6 @@ def agregar_empleado():
 def usuario():
     if 'loggedin' in session:
         
-
-        
             cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
             if request.method == "POST" and 'buscar' in request.form:
                 s = "SELECT * FROM personas.personas WHERE id LIKE '%" + request.form['buscar'] + "%'"
@@ -85,10 +83,7 @@ def usuario():
             list_users = cur.fetchall()
             return render_template('app/personal/persona.html', list_users=list_users)
     
-
-    flash('Debes iniciar sesión para acceder a esta página.')
-
-        
+    flash('Debes iniciar sesión para acceder a esta página.')     
     return render_template('web/loginn.html')
 
 

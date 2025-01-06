@@ -10,6 +10,7 @@ from fpdf import FPDF
 from flask import send_file
 from openpyxl import load_workbook
 
+
 import re
 
 from database.base import get_conection
@@ -144,7 +145,6 @@ def ver_matriculas():
     return render_template('web/loginn.html')
 
 
-
 # eliminar la matricula
 @matricula.route('/delete_matricula/<string:id>', methods=['POST', 'GET'])
 def delete_matricula(id):
@@ -171,7 +171,7 @@ def exportar_matriculas_excel():
             
             # Consulta para obtener todas las matrículas
             cur.execute("""
-                SELECT dm.id, dm.id_personas, p.nombres || ' ' || p.apellidos AS nombre_completo, 
+                SELECT dm.id_personas, p.nombres || ' ' || p.apellidos AS nombre_completo, 
                        dm.fecha_matricula, p.correo
                 FROM personas.detalle_matricula dm
                 INNER JOIN personas.personas p ON dm.id_personas = p.id
@@ -179,7 +179,7 @@ def exportar_matriculas_excel():
             matriculas = cur.fetchall()
 
             # Crear un DataFrame de pandas con formato
-            df = pd.DataFrame(matriculas, columns=['ID', 'Cédula', 'Nombre Completo', 'Fecha Matrícula', 'Correo'])
+            df = pd.DataFrame(matriculas, columns=['Cédula', 'Nombre Completo', 'Fecha Matrícula', 'Correo'])
 
             # Formatear la columna de fechas
             if 'Fecha Matrícula' in df.columns:

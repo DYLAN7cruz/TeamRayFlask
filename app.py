@@ -13,6 +13,12 @@ from templates.app.notificaciones.notificaciones import notificaciones
 from templates.app.conector import administrador
 #----------------BLUEPRINT DE EL ADMINISTRADOR------------
 from templates.app.matriculas.matricula import matricula
+#----------------BLUEPRINT DE HORARIO EVENTO------------
+from templates.app.horario_eventos.horario_eventos import horario_evento
+#----------------BLUEPRINT DE TIPO EVENTO------------
+from templates.app.tipo_evento.tipo_evento import tipo_evento
+#----------------BLUEPRINT DE MODALIDAD------------
+from templates.app.modalidad.modalidad import modalidad
 
 import psycopg2
 import psycopg2.extras
@@ -42,7 +48,18 @@ app.register_blueprint(administrador)
 #--------------------TRAEMAS LA INFORMACION SOBRE LA MATRICULA-------------------------------
 app.register_blueprint(matricula)
 
+#--------------------TRAEMAS LA INFORMACION SOBRE HORARIO EVENTO------------------------------
+app.register_blueprint(horario_evento)
 
+#--------------------TRAEMAS LA INFORMACION SOBRE TIPO EVENTO------------------------------
+app.register_blueprint(tipo_evento)
+
+#--------------------TRAEMAS LA INFORMACION SOBRE MODALIDAD------------------------------
+app.register_blueprint(modalidad)
+
+# para cuando se cree una nueva base de datos
+# hashed_password = generate_password_hash('1234')
+# print("code",hashed_password)
 
 
 # cerrar sesion
