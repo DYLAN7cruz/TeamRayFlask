@@ -11,7 +11,7 @@ from templates.app.comentarios.comentarios import comentarios
 from templates.app.notificaciones.notificaciones import notificaciones 
 #----------------BLUEPRINT DE EL ADMINISTRADOR------------
 from templates.app.conector import administrador
-#----------------BLUEPRINT DE EL ADMINISTRADOR------------
+#----------------BLUEPRINT DE EL ADMINISTRADOR------------ 
 from templates.app.matriculas.matricula import matricula
 #----------------BLUEPRINT DE HORARIO EVENTO------------
 from templates.app.horario_eventos.horario_eventos import horario_evento
@@ -19,12 +19,14 @@ from templates.app.horario_eventos.horario_eventos import horario_evento
 from templates.app.tipo_evento.tipo_evento import tipo_evento
 #----------------BLUEPRINT DE MODALIDAD------------
 from templates.app.modalidad.modalidad import modalidad
+#----------------BLUEPRINT DE EVENTOS------------
+from templates.app.eventos.eventos import eventos
 
 import psycopg2
 import psycopg2.extras
 import re
 # Traer la conexion
-from database.base import get_conection
+from database.base import get_conection 
 conn = get_conection()
 
 app = Flask(__name__, static_url_path='/static')
@@ -56,6 +58,9 @@ app.register_blueprint(tipo_evento)
 
 #--------------------TRAEMAS LA INFORMACION SOBRE MODALIDAD------------------------------
 app.register_blueprint(modalidad)
+
+#--------------------TRAEMAS LA INFORMACION SOBRE EVENTOS------------------------------
+app.register_blueprint(eventos)
 
 # para cuando se cree una nueva base de datos
 # hashed_password = generate_password_hash('1234')
