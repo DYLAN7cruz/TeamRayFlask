@@ -19,7 +19,7 @@ def nuevo_evento():
         cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
         
         # Obtener la lista de horarios disponibles
-        cur.execute("SELECT id, hora_inicio, hora_fin, dia FROM horarios.horario_eventos")
+        cur.execute("SELECT id, TO_CHAR(hora_inicio, 'HH12:MI AM') AS hora_inicio, TO_CHAR(hora_fin, 'HH12:MI AM') AS hora_fin, dia FROM horarios.horario_eventos")
         horarios = cur.fetchall()
 
         cur.execute("SELECT id, nombre FROM eventos.tipo_evento")
@@ -84,7 +84,7 @@ def ver_eventos():
             # Consulta para mostrar todos los eventos
             s = """
                 SELECT e.id, e.nombre, e.direccion, e.fecha, 
-                       CONCAT(h.dia, ' - ', h.hora_inicio, ' a ', h.hora_fin) AS horario_evento,
+                       CONCAT(h.dia, ' - ', TO_CHAR(h.hora_inicio, 'HH12:MI AM'),' a ', TO_CHAR(h.hora_fin, 'HH12:MI AM')) AS horario_evento,
                        t.nombre AS tipo_evento
                 FROM eventos.eventos e
                 JOIN horarios.horario_eventos h ON e.id_horario_eventos = h.id

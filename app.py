@@ -21,6 +21,8 @@ from templates.app.tipo_evento.tipo_evento import tipo_evento
 from templates.app.modalidad.modalidad import modalidad
 #----------------BLUEPRINT DE EVENTOS------------
 from templates.app.eventos.eventos import eventos
+#----------------BLUEPRINT DE MATRICULA EVENTO------------
+from templates.app.matricula_evento.matricula_evento import matricula_evento
 
 import psycopg2
 import psycopg2.extras
@@ -61,6 +63,9 @@ app.register_blueprint(modalidad)
 
 #--------------------TRAEMAS LA INFORMACION SOBRE EVENTOS------------------------------
 app.register_blueprint(eventos)
+
+#--------------------TRAEMAS LA INFORMACION SOBRE EVENTOS------------------------------
+app.register_blueprint(matricula_evento)
 
 # para cuando se cree una nueva base de datos
 # hashed_password = generate_password_hash('1234')

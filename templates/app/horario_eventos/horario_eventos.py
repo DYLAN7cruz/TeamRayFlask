@@ -71,7 +71,7 @@ def horario_eventos():
             cur.execute(s, (search_term,))
             
         else:
-            s = "SELECT * FROM horarios.horario_eventos ORDER BY id ASC "
+            s = "SELECT id, TO_CHAR(hora_inicio, 'HH12:MI AM') AS hora_inicio, TO_CHAR(hora_fin, 'HH12:MI AM') AS hora_fin, dia FROM horarios.horario_eventos ORDER BY id ASC "
             cur.execute(s)
         list_horario_eventos = cur.fetchall()
 

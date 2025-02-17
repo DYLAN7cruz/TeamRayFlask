@@ -159,9 +159,6 @@ def delete_matricula(id):
     return render_template('web/loginn.html')
 
 
-# metodo para hacer un excel
-from openpyxl import load_workbook
-
 # Ruta para exportar las matrículas a Excel con ajuste de columnas
 @matricula.route('/exportar_matriculas_excel', methods=['GET'])
 def exportar_matriculas_excel():
