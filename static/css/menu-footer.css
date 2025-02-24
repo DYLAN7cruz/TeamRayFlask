@@ -147,7 +147,22 @@ header .icono-menu {
 
 
 /*------------------------------------------------------------/*FOOTER*//*-------------------------------------------------------*/
+.boton-mira-aqui {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgb(45, 41, 41);
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
 
+.boton-mira-aqui:hover {
+  background: rgb(212, 5, 5);
+  transform: scale(1.05);
+}
 footer{
     background-color: #000000;
     position: relative;
@@ -297,7 +312,7 @@ footer{
     background: rgb(45, 41, 41);
     padding: 8px 100px;
     text-align: center;
-    color: rgb(255, 2, 2);
+    color: rgb(255, 255, 255);
   }
   
   /*RESPONSIVE FOOTER*/

@@ -19,30 +19,32 @@ body {
 
 .parent {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  grid-template-rows: repeat(2, 1fr); /* 2 filas */
+  gap: 10px; /* Reduce el espacio entre elementos */
   background-color: rgb(0, 0, 0);
-  margin-top: 130px;
-  margin-bottom: 80px;
-  width: 87%;
-  margin-left: 75px;
-  border: 3px solid rgb(255, 0, 0);
+  margin: 50px auto; /* Centra el contenedor en la pantalla */
+  width: 65%; /* Ajusta el ancho para un mejor encaje */
+  border-right: 3px solid rgb(255, 0, 0);
+  place-items: center; /* Centra los elementos dentro del grid */
+  padding: 30px 0px;
+}
 
+.contenedor1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contenedor1 figure {
-  height: 350px;
-  width: 450px;
+  height: 370px; /* Reduce un poco la altura */
+  width: 500px; /* Ajusta el ancho */
   overflow: hidden;
   cursor: pointer;
   position: relative;
-  margin-bottom: 50px;
-  margin-left: 50px;
-  margin-top: 50px;
-  position: relative;
+  margin: 0 auto; /* Centra cada figura */
 }
+
 .contenedor1 figure::before {
   content: '';
   position: absolute;
@@ -121,56 +123,51 @@ body {
   .parent {
     background-color: rgb(0, 0, 0);
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-
-    margin-top: 130px;
-    margin-bottom: 80px;
-    width: 87%;
-    margin-left: 25px;
+    grid-template-columns: 1fr; /* Solo una columna en móviles */
+    gap: 15px; /* Espaciado entre elementos */
+    margin: 50px auto; /* Centra el contenedor */
+    width: 90%; /* Ajusta el ancho al 90% de la pantalla */
     border: 3px solid rgb(255, 255, 255);
   }
 
-  .contenedor1 figure {
-    height: 350px;
-    width: 250px;
-    overflow: hidden;
+  .contenedor1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .contenedor1 figure {
+    height: 40%;
+    width: 100%; /* Usa todo el ancho disponible */
+    max-width: 300px; /* Máximo tamaño para evitar desbordes */
+    overflow: hidden;
     cursor: pointer;
     position: relative;
-    margin-bottom: 50px;
-    margin-left: 35px;
-    margin-top: 50px;
-  }
-  .contenedor1 figure .efecto p {
-    color: white;
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 100px;
-    margin: auto;
-    transition: all ease-out 500ms;
-    margin-top: 50px;
-  
-  }
-  .contenedor1 figure .efecto h2 {
-    
-    margin-bottom: 150px;
-    transition: all ease-out 500ms;
-  
-  }
-  .contenedor1 figure:hover>.efecto h2 {
-    transform: translateY(20px);
-  
-  }
-  
-  .contenedor1 figure:hover>.efecto p {
-    transform: translateY(-100px);
-    transition: all ease-out 500ms;
-  
+    margin: 20px auto; /* Centra cada figura con buen espaciado */
   }
 
+  .contenedor1 figure .efecto p {
+    color: white;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+    margin-top: 20px;
+    transition: all ease-out 500ms;
+  }
+
+  .contenedor1 figure .efecto h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    transition: all ease-out 500ms;
+  }
+
+  /* Desactiva hover en móviles para evitar problemas táctiles */
+  @media (hover: none) {
+    .contenedor1 figure:hover>.efecto h2,
+    .contenedor1 figure:hover>.efecto p {
+      transform: none;
+    }
+  }
 }
 
 

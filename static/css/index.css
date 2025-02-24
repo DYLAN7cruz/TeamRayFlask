@@ -504,11 +504,11 @@ body {
 .div2 {
   color: white;
   display: flex;
-  margin-top: -50px;
+  margin-top: -30px;
   background-color: rgb(0, 0, 0);
   margin-bottom: -50px;
-  margin-right: -50px;
-  padding: 10px 30px;
+  margin-right: -30px;
+  padding: 10px 15px;
   text-align: center;
   justify-content: center center;
   align-items: center center;
@@ -534,19 +534,25 @@ body {
 
 .parrafo_div2 {
   color: white;
-  display: flex;
   text-align: center;
-  justify-content: center ;
+  justify-content: center;
   align-items: center;
-  display: inline;
   padding: 40px 30px;
   font-size: 20px;
- 
-  
+  line-height: 1.6; 
+  max-width: 100%; 
+  margin: auto; 
+  display: block; 
+  box-sizing: border-box; 
 }
 .trofeos{
   color: rgb(255, 255, 255);
-  font-size: 15px;
+  font-size: 20px;
+  line-height: 1.6; 
+  max-width: 100%; 
+  margin: auto; 
+  display: block; 
+  box-sizing: border-box; 
   
 }
 .img_nosotros {
@@ -569,7 +575,11 @@ body {
   margin-top: 60px;
   margin-bottom: 60px;
 }
-
+.logros-lista {
+  list-style: none; /* 🔹 Elimina los puntos de la lista */
+  padding: 0;
+  margin: 0;
+}
 .div3 {
   color: white;
   display: flex;
@@ -577,7 +587,7 @@ body {
   justify-content: center;
   align-items: center;
   display: inline;
-  height: 450px;
+  height: 430px;
   overflow: auto;
   border-top: 3px solid rgb(255, 0, 0);
   border-left: 3px solid rgb(255, 0, 0);
@@ -740,8 +750,7 @@ body {
 .cuadro2 {
   background-color: rgba(0, 0, 0, 0.659);
   width: 500px;
-  margin-left: 37%;
-  margin-right:37%;
+  margin: 0 auto; /* Esto centra el div horizontalmente */
   padding: 5px;
   text-align: center;
   border: none;
@@ -774,8 +783,6 @@ body {
 .lista {
   color: white;
   text-transform: uppercase;
-
-
 }
 
 .fila1 {
@@ -962,43 +969,35 @@ body {
 
 .titulo_carrusel {
   color: rgb(255, 255, 255);
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-right: 52%;
-  text-transform: uppercase;
-  /*letter-spacing: 10px;*/
+  text-align: center; /* Asegura que el texto esté centrado */
   background-color: rgb(0, 0, 0);
-
-  margin-top: 30px;
+  text-transform: uppercase;
   width: 100%;
   font-size: 30px;
   font-weight: 700;
+  margin-top: 30px;
+  margin: 0 auto; /* Centra el elemento en su contenedor */
+  display: block; /* Cambia de flex a block para que text-align funcione bien */
 }
 
 
-
 .image-slider {
-  display: grid;
-  place-items: center;
-
+  display: flex;
+  flex-direction: column; /* Asegura que el título y el carrusel estén alineados */
+  align-items: center; /* Centra los elementos */
+  justify-content: center;
   position: relative;
-
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.414);
-  /*background-image: linear-gradient(rgba(0, 0, 0, 0.168),rgba(0, 0, 0, 0.147)), url(../IMG/fondo.carrusel1.png);*/
-  padding: 1px;
+  padding: 20px;
   background-size: cover;
   background-attachment: fixed;
   width: 90%;
+  max-width: 1600px; /* Evita que sea demasiado grande en pantallas grandes */
   height: 400px;
-  margin-left: 60px;
-  margin-bottom: 50px;
-  /*border-bottom: 3px solid rgb(255, 255, 255);
-  border-top: 3px solid rgb(255, 255, 255);*/
-  border-left: 3px solid rgb(255, 0, 0);
-  border-right: 3px solid rgb(255, 6, 6);
-
+  margin: 0 auto; /* Centra el carrusel */
+  border-left: 3px solid red;
+  border-right: 3px solid red;
 }
 
 .image-slider-track {
@@ -1047,14 +1046,16 @@ body {
 @media (max-width: 991px) {
   .image-slider {
     width: 90%;
-    right: 40px;
+    margin: 0 auto; 
+    right: auto;
   }
 
   .titulo_carrusel {
     color: rgb(255, 255, 255);
-    width: 90%;
-    margin-right: 86%;
-    font-size: 14px;
+    width: 100%; 
+    text-align: center; 
+    font-size: 16px; 
+    margin: 10px auto; 
+    padding: 10px 0; 
   }
-
 }
