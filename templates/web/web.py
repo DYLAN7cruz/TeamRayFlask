@@ -23,6 +23,9 @@ def login():
     cursor.execute("SELECT COUNT(*) FROM personas.notificaciones")
     count = cursor.fetchone()[0]
 
+    cursor.execute("SELECT COUNT(*) FROM eventos.eventos")
+    count_evento = cursor.fetchone()[0]
+
     cursor.execute("SELECT COUNT(*) FROM personas.comentarios")
     count_comentario = cursor.fetchone()[0]
 
@@ -54,7 +57,7 @@ def login():
                 session['direccion'] = account['direccion']
 
                 if session['nombre_rol'] == "Administrador":
-                    return render_template('app/admin.html',countt=countt, count=count, count_comentario=count_comentario)
+                    return render_template('app/admin.html',countt=countt, count=count, count_comentario=count_comentario, count_evento=count_evento)
                 elif session['nombre_rol'] == "Entrenador":
                     return render_template('app/entrenador.html')
                 elif session['nombre_rol'] == "Estudiante":

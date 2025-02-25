@@ -1,13 +1,13 @@
 let slideIndex2 = 1;
-showSlides2(slideIndex2)
+showSlidesss(slideIndex2)
 
 function plusSlides2(n){
-    showSlides2(slideIndex2 += n)
+    showSlidesss(slideIndex2 += n)
 }
 function currentSlide2(n){
-    showSlides2(slideIndex2 = n)
+    showSlidesss(slideIndex2 = n)
 }
-function showSlides2(n){
+function showSlidesss(n){
     let i;
     let slides2 = document.querySelectorAll(".carrusel2");
     let quadrates1 = document.querySelectorAll(".quadrate1"); 
@@ -20,5 +20,6 @@ function showSlides2(n){
         quadrates1[i].className = quadrates1[i].className.replace("active","")
     }
     slides2[slideIndex2-1].style.display = "block";
-    quadrates1[slideIndex2-1].className += " active";
+    // quadrates1[slideIndex2-1].className += " active";
 }
+

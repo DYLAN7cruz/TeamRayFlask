@@ -14,6 +14,19 @@ body {
   
 }
 
+:root {
+	--grey: #F1F0F6;
+	--dark-grey: #8D8D8D;
+	--light: #fff;
+	--dark: #000;
+	--green: #81D43A;
+	--light-green: #E3FFCB;
+	--blue: #1775F1;
+	--light-blue: #D0E4FF;
+	--dark-blue: #0C5FCD;
+	--red: rgba(200, 0, 0, 0.784);
+}
+
 /*----------------------------------------------------------------------------------------------------------/*CONTENEDOR DE LAS 4 MODALIDADES*/
 /*---------------------------------------------------------------------------*/
 
@@ -25,7 +38,7 @@ body {
   background-color: rgb(0, 0, 0);
   margin: 50px auto; /* Centra el contenedor en la pantalla */
   width: 65%; /* Ajusta el ancho para un mejor encaje */
-  border-right: 3px solid rgb(255, 0, 0);
+  border-right: 3px solid var(--red);
   place-items: center; /* Centra los elementos dentro del grid */
   padding: 30px 0px;
 }
@@ -66,7 +79,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(255, 0, 0);
+  background-color: var(--red);
   opacity: 0;
   transition: all ease-out 500ms;
   text-align: center;
@@ -173,61 +186,114 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-.caja{
-  background-color: rgb(0, 0, 0);
-  height: auto;
-  width: auto;
-  margin: 110px 80px 70px 80px;
-  
-  
+/* Tamaño del scroll */
+.caja::-webkit-scrollbar {
+  width: 8px; /* Ancho del scroll */
 }
 
-.comentarios{
-  background-color: aqua;
+/* Color de la barra de desplazamiento */
+.caja::-webkit-scrollbar-thumb {
+  background: var(--red); /* Color rojo para resaltar */
 
+  transition: all 0.3s ease-in-out;
 }
 
-.nombres{
-font-weight: 700;
-  width: auto;
+/* Efecto al pasar el mouse sobre el scroll */
+.caja::-webkit-scrollbar-thumb:hover {
+  background:var(--red); /* Rojo más oscuro */
+}
+
+/* Color de fondo del scroll */
+.caja::-webkit-scrollbar-track {
+  background: black; /* Fondo negro */
 }
 
 
-
-
-
-
-/* Estilos para la caja de comentarios */
+/* Contenedor Principal */
 .caja {
-  background-color: rgba(208, 186, 186, 0.115);
-  padding: 50px;
- 
+  background: rgb(0, 0, 0); /* Negro con opacidad */
+  width: 50%;
+  max-width: 1000px;
+  margin: 60px auto;
+  margin-top: 100px;
+  padding: 30px;
+  max-height: 410px; 
+  overflow-y: auto; 
 }
 
-/* Estilos para cada comentario */
-.comentarios {
+/* Comentario individual */
+.comentario {
+  background: rgb(45, 41, 41); /* Negro puro */
+  padding: 18px;
+  margin-bottom: 20px;
+  color: white;
+  border-left: 4px solid var(--red); /* Rojo oscuro más sobrio */
+
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efecto Hover: Ligero resalte */
+.comentario:hover {
+  transform: scale(1.01);
+  border-left: 4px solid rgb(255, 255, 255); /* Ligeramente más brillante */
+}
+
+/* Cabecera del comentario */
+.comentario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea sutil */
+  padding-bottom: 6px;
   margin-bottom: 10px;
-  padding: 10px;
-  background-color: #ffffff;
-border-radius: 10px;
-
 }
 
-/* Estilos para el nombre del autor */
-.nombres {
+/* Nombre del usuario */
+.comentario-nombre {
   font-weight: bold;
-  margin-bottom: 5px;
+  color: white; /* Rojo más serio */
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
-/* Estilos para el contenido del comentario */
-.comentarios p {
-  margin: 0;
+/* Fecha del comentario */
+.comentario-fecha {
+  font-size: 14px;
+  color: rgb(150, 150, 150);
 }
+
+/* Texto del comentario */
+.comentario-texto p {
+  font-size: 15px;
+  color: #ddd;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .caja {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .comentario {
+    padding: 15px;
+  }
+
+  .comentario-nombre {
+    font-size: 15px;
+  }
+
+  .comentario-texto p {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
+

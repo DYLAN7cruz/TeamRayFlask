@@ -21,8 +21,8 @@
 	--blue: #1775F1;
 	--light-blue: #D0E4FF;
 	--dark-blue: #0C5FCD;
-	--red: #ff0022;
-}
+	--red: rgba(200, 0, 0, 0.784);
+  }
 
 
 
@@ -468,7 +468,7 @@ main .card .progress {
 .progress {
     width: 0;
     height: 20px; /* Ajusta la altura de la barra de progreso según tu diseño */
-    background-color: #af4c4c; /* Color de fondo de la barra de progreso */
+    background-color: var(--red);
 }
 
 .progress-label {
@@ -476,7 +476,7 @@ main .card .progress {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #ff0101; /* Color del texto de la etiqueta */
+    color: var(--red);/* Color del texto de la etiqueta */
 }
 
 
@@ -697,7 +697,7 @@ main .btn-send:hover {
 .hr{
 	width: 90px;
 	height: 3px;
-	background-color: red;
+	background-color: var(--red);
 	border: none;
 border-radius: 5px;
 }
@@ -705,7 +705,7 @@ border-radius: 5px;
 
 
 .notification-count{
-	background-color: red;
+	background-color: var(--red);
 	margin-left: 5px;
 	border-radius: 10px;
 	padding: 5px 10px;

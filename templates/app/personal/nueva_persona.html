@@ -91,7 +91,7 @@
                 </div>
                 <div class="form login">
 
-                    <span class="title">Registro de usuario</span>
+                    <span class="title">Registro de Usuarios</span>
 
                     <form action="{{ url_for('personal.agregar_empleado') }}" method="post" autocomplete="off"
                         onsubmit="return validarCedula()">
@@ -177,12 +177,12 @@
                         <div class="input-field">
                             <input type="text" placeholder="Ingrese su telefono" name="telefono" id="telefono"
                                 maxlength="10" oninput="eliminarLetras(event)" required>
-                            <i class="fa-solid fa-envelope icon"></i>
+                                <i class="fa-solid fa-phone"></i>
                         </div>
                         <div class="input-field">
                             <input type="text" placeholder="Ingrese su direccion" name="direccion" id="direccion"
                                 maxlength="50" required>
-                            <i class="fa-solid fa-envelope icon"></i>
+                                <i class="fa-solid fa-map-location-dot"></i>
                         </div>
 
 

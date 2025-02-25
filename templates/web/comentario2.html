@@ -70,19 +70,20 @@
 
     </header><!--------------------------------------FIN MENU----------------------------->
 
-
-
-    </div>
     <div class="caja">
         {% for row in list_comentarios %}
-        <div class="comentarios">
-            <div class="nombres">{{row[3]}} {{row[4]}}</div>
-            {{row[1]}}
+        <div class="comentario">
+            <div class="comentario-header">
+                <div class="comentario-nombre">{{ row[3] }} {{ row[4] }}</div>
+                <!-- <div class="comentario-fecha">📅 {{ row[2] }}</div> Fecha del comentario -->
+            </div>
+            <div class="comentario-texto">
+                <p>{{ row[1] }}</p>
+            </div>
         </div>
-        <br>
         {% endfor %}
     </div>
-    </div>
+    
 
 
 

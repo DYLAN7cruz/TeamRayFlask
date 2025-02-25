@@ -6,7 +6,18 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
-
+:root {
+	--grey: #F1F0F6;
+	--dark-grey: #8D8D8D;
+	--light: #fff;
+	--dark: #000;
+	--green: #81D43A;
+	--light-green: #E3FFCB;
+	--blue: #1775F1;
+	--light-blue: #D0E4FF;
+	--dark-blue: #0C5FCD;
+	--red: rgba(200, 0, 0, 0.784);
+}
 
 body {
 
@@ -22,7 +33,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   background-color: #000000;
-  border-right: rgb(255, 0, 0) 3px solid;
+  border-right: var(--red) 3px solid;
   margin: 0px 80px;
   margin-top: 80px;
   margin-bottom: 40px;
@@ -70,7 +81,7 @@ body {
 }
 
 .box-area p:nth-child(2) {
-  color: rgb(222, 0, 0);
+  color: var(--red);
   font-size: 30px;
   text-transform: uppercase;
   font-weight: 600;
@@ -98,7 +109,7 @@ body {
 }
 
 .box-area:hover {
-  background: #ff0000;
+  background:var(--red);
   border: 2px solid black;
   color: black;
 }

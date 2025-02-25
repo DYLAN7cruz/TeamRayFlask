@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/admin.css">
-    <link rel="stylesheet" href="/static/css/nuevo_usuario.css">
+    <link rel="stylesheet" href="/static/css/matricula.css">
     <link rel="stylesheet" href="/static/css/scroll-loader.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
@@ -69,59 +69,69 @@
         <div class="todo">
             <div class="todo2">
                 <div class="ver">
-                    <a href="/templates/app/matriculas/matricula.html" class="nuevo"><i class="fa-solid fa-user"></i> Ver
+                    <a href="/templates/app/matriculas/matricula.html" class="nuevo"><i class="fa-solid fa-user"></i>
+                        Ver
                         matriculas</a>
                 </div>
                 <div class="form login">
                     <span class="title">Registrar Matrícula</span>
+                    <br> <br>
 
                     <!-- Formulario de matrícula -->
                     <form action="{{ url_for('matricula.registrar_matricula') }}" method="POST" autocomplete="off">
                         <input type="hidden" id="id_persona" name="id_persona">
 
-                        <div class="form-group">
-                            <label for="cedula">Buscar por Cédula:</label>
-                            <input type="text" id="cedula" name="cedula" placeholder="Ingrese la cédula" maxlength="10" required>
-                            <button type="button" onclick="buscarEstudiante()">Buscar</button>
+                        <div class="input-field">
+
+                            <div class="search-container">
+                                <input type="text" id="cedula" name="cedula" placeholder="Ingrese la cédula"
+                                    maxlength="10" required>
+                                    <i class="fa-solid fa-address-card icon"></i>
+                                <button type="button" class="search-button" onclick="buscarEstudiante()">Buscar</button>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="nombres">Nombres:</label>
-                            <input type="text" id="nombres" name="nombres" readonly>
+                        <div class="input-field">
+                            <input type="text" id="nombres" name="nombres" readonly placeholder="nombre de estudiante">
+                            <i class="fa-solid fa-user icon"></i>
                         </div>
 
-                        <div class="form-group">
-                            <label for="apellidos">Apellidos:</label>
-                            <input type="text" id="apellidos" name="apellidos" readonly>
+                        <div class="input-field">
+                            <input type="text" id="apellidos" name="apellidos" readonly placeholder="apellido de estudiante">
+                            <i class="fa-solid fa-user icon"></i>
                         </div>
 
-                        <div class="form-group">
-                            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                        <div class="input-field">
+                            <label for="fecha_nacimiento"> Fecha de
+                                Nacimiento:</label>
                             <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" readonly>
+                            <i class="fa-regular fa-calendar icon"></i>
                         </div>
 
-                        <div class="form-group">
-                            <label for="fecha_inscripcion">Fecha de Inscripción:</label>
+                        <div class="input-field">
+                            <label for="fecha_inscripcion"><i class="fa-regular fa-calendar icon"></i> Fecha de
+                                Inscripción:</label>
                             <input type="date" id="fecha_inscripcion" name="fecha_inscripcion" readonly>
                         </div>
 
-                        <div class="form-group">
-                            <label for="nombre_cinturon">Nombre de Cinturón:</label>
-                            <input type="text" id="nombre_cinturon" name="nombre_cinturon" readonly>
+                        <div class="input-field">
+                            <input type="text" id="nombre_cinturon" name="nombre_cinturon" readonly placeholder="nombre cinturon">
+                            <i class="fa-solid fa-medal icon"></i>
                         </div>
 
-                        <div class="form-group">
-                            <label for="correo">Correo:</label>
-                            <input type="text" id="correo" name="correo" readonly>
+                        <div class="input-field">
+                            <input type="text" id="correo" name="correo" readonly placeholder="correo">
+                            <i class="fa-solid fa-envelope icon"></i>
                         </div>
 
-                        <div class="form-group">
-                            <label for="direccion">Dirección:</label>
-                            <input type="text" id="direccion" name="direccion" readonly>
+                        <div class="input-field">
+                            <input type="text" id="direccion" name="direccion" readonly placeholder="direccion">
+                            <i class="fa-solid fa-map-location-dot icon"></i>
                         </div>
 
-                        <div class="form-group">
-                            <label for="fecha_matricula">Fecha de Matrícula:</label>
+                        <div class="input-field">
+                            <label for="fecha_matricula"><i class="fa-regular fa-calendar icon"></i> Fecha de
+                                Matrícula:</label>
                             <input type="date" id="fecha_matricula" name="fecha_matricula" required>
                         </div>
 
@@ -129,6 +139,7 @@
                             <input type="submit" value="Registrar Matrícula">
                         </div>
                     </form>
+
 
                     <!-- Script para buscar estudiante -->
                     <script>

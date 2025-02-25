@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/admin.css">
-    <link rel="stylesheet" href="/static/css/nuevo_usuario.css">
+    <link rel="stylesheet" href="/static/css/matricula.css">
     <link rel="stylesheet" href="/static/css/scroll-loader.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
@@ -79,35 +79,41 @@
                     <form action="{{ url_for('matricula_evento.registrar_matricula_evento') }}" method="POST" autocomplete="off">
                         <input type="hidden" id="id_personas" name="id_personas">
 
-                        <div class="form-group">
-                            <label for="cedula">Buscar por Cédula:</label>
-                            <input type="text" id="cedula" name="cedula" placeholder="Ingrese la cédula" maxlength="10" required>
-                            <button type="button" onclick="buscarEstudiante()">Buscar</button>
+                        <div class="input-field">
+
+                            <div class="search-container">
+                                <input type="text" id="cedula" name="cedula" placeholder="Ingrese la cédula"
+                                    maxlength="10" required>
+                                    <i class="fa-solid fa-address-card icon"></i>
+                                <button type="button" class="search-button" onclick="buscarEstudiante()">Buscar</button>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="nombres">Nombres:</label>
-                            <input type="text" id="nombres" name="nombres" readonly>
+                        <div class="input-field">
+                            <input type="text" id="nombres" name="nombres" readonly placeholder="nombre de estudiante">
+                            <i class="fa-solid fa-user icon"></i>
                         </div>
 
-                        <div class="form-group">
-                            <label for="apellidos">Apellidos:</label>
-                            <input type="text" id="apellidos" name="apellidos" readonly>
+                        <div class="input-field">
+                            <input type="text" id="apellidos" name="apellidos" readonly placeholder="apellido estudiante">
+                            <i class="fa-solid fa-user icon"></i>
                         </div>
 
-                        <div class="form-group">
-                            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                        <div class="input-field">
+                            <label for="fecha_nacimiento"> Fecha de
+                                Nacimiento:</label>
                             <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" readonly>
+                            <i class="fa-regular fa-calendar icon"></i>
                         </div>
 
-                        <div class="form-group">
-                            <label for="apellidos">Genero:</label>
-                            <input type="text" id="genero" name="genero" readonly>
+                        <div class="input-field">
+                            <input type="text" id="genero" name="genero" readonly placeholder="genero">
+                            <i class="fa-regular fa-calendar icon"></i>
                         </div>
                         <div class="input-field">
                             <label for="id_eventos">Selecciona un evento:</label>
                             <br>
-                            <select name="id_eventos" id="id_eventos" required>
+                            <select name="id_eventos" id="id_eventos"  required>
                                 <option value="" disabled selected>Seleccionar...</option>
                                 {% for evento in eventos %}
                                 <option value="{{ evento.id }}">{{ evento.nombre }}</option>
