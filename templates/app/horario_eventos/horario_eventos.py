@@ -42,7 +42,7 @@ def add_horario_eventos():
         
            conn.commit()
            flash('¡Registro realizada con éxito!')
-        return redirect(url_for('horario_evento.nuevo_horario_evento'))
+        return redirect(url_for('horario_evento.horario_eventos'))
     
 
     flash('Debes iniciar sesión para acceder a esta página.')

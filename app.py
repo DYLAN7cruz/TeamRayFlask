@@ -1,27 +1,16 @@
 from flask import Flask, jsonify, render_template, url_for, request, redirect, flash, session
 from flask_login import LoginManager, login_user, logout_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
-#---------------BLUEPRINTS DE LA WEB-------------------
 from templates.web.web import web
-#---------------BLUEPRINTS DE LOS CRUDS PERSONAL-------------------
 from templates.app.personal.personal import personal
-#----------------BLUEPRINT DE LOS COMENTARIOS------------
 from templates.app.comentarios.comentarios import comentarios 
-#----------------BLUEPRINT DE LAS NOTIFICACIONES------------
 from templates.app.notificaciones.notificaciones import notificaciones 
-#----------------BLUEPRINT DE EL ADMINISTRADOR------------
 from templates.app.conector import administrador
-#----------------BLUEPRINT DE EL ADMINISTRADOR------------ 
 from templates.app.matriculas.matricula import matricula
-#----------------BLUEPRINT DE HORARIO EVENTO------------
 from templates.app.horario_eventos.horario_eventos import horario_evento
-#----------------BLUEPRINT DE TIPO EVENTO------------
 from templates.app.tipo_evento.tipo_evento import tipo_evento
-#----------------BLUEPRINT DE MODALIDAD------------
 from templates.app.modalidad.modalidad import modalidad
-#----------------BLUEPRINT DE EVENTOS------------
 from templates.app.eventos.eventos import eventos
-#----------------BLUEPRINT DE MATRICULA EVENTO------------
 from templates.app.matricula_evento.matricula_evento import matricula_evento
 
 import psycopg2
@@ -34,37 +23,26 @@ conn = get_conection()
 app = Flask(__name__, static_url_path='/static')
 app.secret_key = "capuli"
 
-#---------------------TRAEMOS LA INFORMACION DE EL WEB.PY----------------------
 app.register_blueprint(web)
 
-#--------------------TRAEMAS LA INFORMACION SOBRE EL CRUD DEL PERSONAL-------------------------------
 app.register_blueprint(personal)
 
-#--------------------TRAEMAS LA INFORMACION SOBRE TODOS LOS CRUDS DE LOS COMETARIOS-------------------------------
 app.register_blueprint(comentarios)
 
-#--------------------TRAEMAS LA INFORMACION SOBRE TODOS LOS CRUDS DE LAS NOTIFICACIONES-------------------------------
 app.register_blueprint(notificaciones)
 
-#--------------------TRAEMAS LA INFORMACION SOBRE EL ADMIN-------------------------------
 app.register_blueprint(administrador)
 
-#--------------------TRAEMAS LA INFORMACION SOBRE LA MATRICULA-------------------------------
 app.register_blueprint(matricula)
 
-#--------------------TRAEMAS LA INFORMACION SOBRE HORARIO EVENTO------------------------------
 app.register_blueprint(horario_evento)
 
-#--------------------TRAEMAS LA INFORMACION SOBRE TIPO EVENTO------------------------------
 app.register_blueprint(tipo_evento)
 
-#--------------------TRAEMAS LA INFORMACION SOBRE MODALIDAD------------------------------
 app.register_blueprint(modalidad)
 
-#--------------------TRAEMAS LA INFORMACION SOBRE EVENTOS------------------------------
 app.register_blueprint(eventos)
 
-#--------------------TRAEMAS LA INFORMACION SOBRE EVENTOS------------------------------
 app.register_blueprint(matricula_evento)
 
 # para cuando se cree una nueva base de datos

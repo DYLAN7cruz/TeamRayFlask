@@ -130,6 +130,8 @@ def update(id):
             genero = request.form['genero']
             nombre_rol = request.form['nombre_rol']
             correo = request.form['correo']
+            telefono = request.form['telefono']
+            direccion = request.form['direccion']
 
             cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
             
@@ -146,9 +148,11 @@ def update(id):
                         nombre_cinturon = %s,
                         genero = %s,
                         nombre_rol = %s,
-                        correo = %s
+                        correo = %s,
+                        telefono = %s,
+                        direccion = %s
                     WHERE id = %s
-                """, (nombres, apellidos, fecha_nacimiento, fecha_inscripcion, hashed_password, nombre_cinturon, genero, nombre_rol, correo, id))
+                """, (nombres, apellidos, fecha_nacimiento, fecha_inscripcion, hashed_password, nombre_cinturon, genero, nombre_rol, correo, telefono, direccion, id))
             else:
                 cur.execute("""
                     UPDATE personas.personas
@@ -159,9 +163,11 @@ def update(id):
                         nombre_cinturon = %s,
                         genero = %s,
                         nombre_rol = %s,
-                        correo = %s
+                        correo = %s,
+                        telefono = %s,
+                        direccion = %s
                     WHERE id = %s
-                """, (nombres, apellidos, fecha_nacimiento, fecha_inscripcion, nombre_cinturon, genero, nombre_rol, correo, id))
+                """, (nombres, apellidos, fecha_nacimiento, fecha_inscripcion, nombre_cinturon, genero, nombre_rol, correo, telefono, direccion, id))
                 
             flash('Cambios guardados con éxito')
             conn.commit()

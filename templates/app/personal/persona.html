@@ -59,7 +59,7 @@
       <i class="fa-solid fa-bars menu"></i>
       <form action="/templates/app/personal/persona.html" method="post">
         <div class="form-group">
-          <input type="text" name="buscar" id="buscar" placeholder="Buscar...">
+          <input type="text" name="buscar" id="buscar" maxlength="10" oninput="eliminarLetras(event)" placeholder="Buscar...">
           <i class='bx bx-search icon'></i>
         </div>
 
@@ -131,6 +131,7 @@
     <script src="/static/js/hola.js"></script>
     <script src="/static/js/index.js"></script>
     <script src="/static/js/paginador.js"></script>
+    <script src="/static/js/validadores.js"></script>
 
 
     <!--HACE QUE EL BOTON DE LA EQUIS DEL ALERTA FUNCIONE-->
